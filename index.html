@@ -1,0 +1,45 @@
+---
+layout: default
+title: Home
+---
+
+{% for post in paginator.posts %}
+    <article class="index">
+        <header>
+            <h1 class="title">
+                <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+            </h1>
+        </header>
+            
+            {{ post.content }}
+            
+        <p class="signoff">
+            &mdash;
+            <a href="{{ post.url }}" title="{{ post.title }}"><time datetime="{{ post.date | date_to_xmlschema }}" pubdate>{{ post.date | date_to_string }}</time></a>
+            (<a href="{{ post.url }}#disqus_thread" class="post_comment_link">Comments</a>)
+        </p>
+    
+    </article>
+    <hr />
+{% endfor %}
+
+
+<div class="section-nav">
+  {% if paginator.next_page %}
+  <div class="left align-right">
+    <a class="prev" href="/page{{ paginator.next_page }}/">&larr; Précédant</a>
+  </div>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.previous_page == 1 %}
+      <div class="right align-left">
+        <a class="next" href="/"> Suivant &rarr;</a>
+      </div>
+    {% else %}
+      <div class="right align-left">
+        <a class="next" href="/page{{ paginator.previous_page }}"> Suivant &rarr;</a>
+      </div>
+    {% endif %}
+  {% endif %}
+  {% include search.html %}
+</div>

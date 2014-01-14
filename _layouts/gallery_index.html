@@ -1,0 +1,34 @@
+---
+layout: page
+---
+</section>
+
+<ul class="grid effect-6" id="grid">
+{% for gallery in page.galleries %}
+<li style="text-align: center;">
+	    <a href="{{ gallery['gallery'] }}">
+        	<img style="max-height: 20em; max-width: 20em;" src="{{ gallery['gallery'] }}/thumbs/{{ gallery['best_image'] }}">
+    	</a>
+    	<h3><a href="{{ gallery['gallery'] }}">{{ gallery["name"] }}</a></h3>
+    	{{ gallery["images"] | size }} images
+</li>
+
+{% endfor %}
+</ul>
+		<script src="/js/masonry.pkgd.min.js"></script>
+		<script src="/js/imagesloaded.js"></script>
+		<script src="/js/classie.js"></script>
+		<script src="/js/AnimOnScroll.js"></script>
+
+
+
+
+		<script>
+			new AnimOnScroll( document.getElementById( 'grid' ), {
+				minDuration : 0.4,
+				maxDuration : 0.7,
+				viewportFactor : 0.2
+			} );
+		</script>
+<section class="wrapper content">
+

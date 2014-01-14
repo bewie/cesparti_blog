@@ -1,0 +1,57 @@
+---
+layout: page
+---
+
+
+		</section>
+		<script>
+			$(document).ready(function(){
+				//Examples of how to assign the Colorbox event to elements
+				$(".slide1").colorbox({rel:'group1',width:"75%", height:"80%"});
+				$(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+				$(".vimeo").colorbox({iframe:true, innerWidth:500, innerHeight:409});
+				$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+				$(".inline").colorbox({inline:true, width:"50%"});
+				$(".callbacks").colorbox({
+					onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+					onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+					onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+					onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+					onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+				});
+			});
+		</script>		
+		<div class="container">
+			<!-- Top Navigation -->
+			<ul class="grid effect-1" id="grid">
+		{% for image in page.images %}
+
+		<li><a class="slide1" href="{{ image }}"><img src="thumbs/{{ image }}"></a></li>
+
+		{% endfor %}
+			</ul>
+		</div>
+		<script src="/js/masonry.pkgd.min.js"></script>
+		<script src="/js/imagesloaded.js"></script>
+		<script src="/js/classie.js"></script>
+		<script src="/js/AnimOnScroll.js"></script>
+
+
+
+
+		<script>
+			new AnimOnScroll( document.getElementById( 'grid' ), {
+				minDuration : 0.4,
+				maxDuration : 0.7,
+				viewportFactor : 0.2
+			} );
+		</script>
+<section class="wrapper content">
+
+
+
+
+
+
+
+

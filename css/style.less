@@ -1,0 +1,390 @@
+/*------------------------------------*\
+    FONTS
+\*------------------------------------*/
+
+blockquote {
+  color: #000;
+  font-style: italic;
+}
+
+/*------------------------------------*\
+    VARIABLES
+\*------------------------------------*/
+/* @nice-font: 'AvenirNextLTW01-Regular', Helvetica, sans-serif; */
+/* @nice-font: 'Source Sans Pro ExtraLight', sans-serif; */
+ @nice-font: 'Raleway-regular', sans-serif;
+ @head-font: 'Raleway Thin', sans-serif;
+ @nav-font: 'Raleway', sans-serif;
+ @italic-font: 'Raleway ', sans-serif;
+ @bold-font: 'Raleway SemiBold', sans-serif;
+ @boldIta-font: 'Raleway SemiBold', sans-serif;
+
+
+
+/*
+@nav-font: 'Source Sans Pro ExtraLight', sans-serif;
+@italic-font: 'AvenirNextLTW01-Italic';
+@bold-font: 'Avenir Next LT W01 Bold';
+@boldIta-font: 'AvenirNextLTW01-BoldIta';
+*/
+/*@nav-font: 'Avenir Next W01 Thin';*/
+
+
+
+
+@text-color: #333;
+@link-color: #227CE8;
+@nav-color: #666;
+@header-color: @text-color;
+
+/*------------------------------------*\
+    MAIN
+\*------------------------------------*/
+html{
+    background:white;
+}
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+body{
+    background:white;
+    padding-top:50px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: @text-color;
+
+}
+#page{
+    margin:0 auto;
+    margin-bottom: 1em;
+    float:none;
+    text-align:center;
+}
+
+ol.archive{
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    margin-bottom: 1.5em;
+}
+
+.signoff{
+    text-align:right;
+    margin-bottom: 1em;
+    font-size: 18px;
+}
+
+ul{
+    list-style-type: square;
+}
+
+.hero {
+  background-color: #2B2B2B;
+  background-size: cover;
+  height: 200px;
+  box-shadow: inset 0 0 15px rgba(0,0,0,.5);
+}
+
+.content {
+
+}
+
+.content i, .content em {
+    font-family: @italic-font;
+    font-weight: 200;
+    font-style: normal;
+}
+.content b, .content strong {
+    font-family: @bold-font;
+    font-weight: 600;
+    font-weight: normal;
+}
+.content em b {
+    font-family: @boldIta-font;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+
+.wrapper-gallery {
+    width: 85%;
+    margin:0 auto;
+    padding:0 auto;
+}
+
+/*------------------------------------*\
+    TYPE
+\*------------------------------------*/
+.title{
+    font-size: 42px;
+    line-height:1;
+    font-family: @nav-font;
+    font-weight: 300;
+
+    a{
+        color: @header-color;
+        border-bottom: 0;
+    }
+}
+a{
+    color: inherit;
+    border-bottom: 1px dotted #bbb;
+}
+a:hover{
+    color: #b83000;
+    text-decoration: none;
+}
+
+a.heading{
+    color:inherit;
+    text-decoration:none;
+    border:0;
+}
+
+a.heading:active,
+a.heading:focus{
+    position:relative;
+    top:0;
+}
+
+#header{
+   font-family: @nice-font;
+   text-transform: uppercase;
+   font-size: 71px;
+   line-height: 1;
+   text-align: center;
+
+   a{
+       color:@header-color;
+       border-bottom: 0;
+    }
+    a:hover{
+        text-decoration: none;
+    }
+}
+
+nav > ul{
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-family: @nav-font;
+    font-weight: 200;
+    margin: 0;
+    text-align: center;
+
+    a{
+        color: @text-color*2;
+        border-bottom: 0;
+    }
+}
+
+nav li{
+    display: inline;
+    margin-left: 0.6em;
+}
+
+nav li:first-child{
+    margin-left: 0;
+}
+
+nav{
+    margin-bottom: 36px;
+    line-height: 29px;
+}
+
+#foot {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 2em;
+    font-size: 16px;
+}
+
+.heart {
+    color: #f66;
+}
+
+/*------------------------------------*\
+    IMAGES
+\*------------------------------------*/
+#logo{
+    margin-bottom:1.5em;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rounded-corners (@radius: 10px) {
+    border-radius: @radius;
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+}
+
+img[src*="/photo/"]{
+    .rounded-corners;
+}
+
+
+.about{
+    width:1240px;
+    margin:0 auto;
+    padding:10px;
+}
+
+.about-img1 {
+  float: right;
+  width: 400px;
+  padding: 0px 15px 7px 10px;
+}
+
+.about-img1 img {
+  border: none;
+  padding: 5;
+}
+
+.about-img2 {
+  padding: 7px 10px 5px 10px;
+  text-align: center;
+}
+
+.about-img2 img {
+  border: none;
+  
+  width: 360px;
+  padding: 5;
+}
+
+
+
+.map {
+  position: relative;
+  margin: auto;
+  padding: auto auto;
+  width: 100%;
+  text-align: center;
+}
+
+
+/*------------------------------------*\
+    PAGINATION
+\*------------------------------------*/
+footer {
+    position: relative;
+    margin-top: 1em;
+}
+
+fieldset {
+    padding: 0;
+    border: 0;
+    text-align: center;
+}
+
+.left { float: left; }
+.right { float: right; }
+.align-right { text-align: right; }
+.align-left { text-align: left; }
+.align-center { text-align: center; }
+
+
+.section-nav .next, .section-nav .prev {
+  position: relative;
+}
+
+.section-nav .next:after, .section-nav .prev:before {
+  position: absolute;
+  top: -7px;
+}
+
+.section-nav .next:after {
+  right: 10px;
+}
+
+.section-nav .prev:before {
+  left: 10px;
+}
+
+.section-nav .prev, .section-nav .prev:hover {
+  /*float: left;*/
+  padding-left: 10px;
+}
+
+.section-nav .next, .section-nav .next:hover {
+  /*float: right;*/
+  padding-right: 10px;
+}
+
+/*------------------------------------*\
+    NARROW
+\*------------------------------------*/
+/*
+CSS for tablets and narrower devices
+*/
+
+
+
+
+
+@media (min-width: 721px) and (max-width: 960px){
+}
+/*--- END NARROW ---*/
+
+
+
+
+
+/*------------------------------------*\
+    MOBILE
+\*------------------------------------*/
+/*
+CSS for mobile devices.
+Linearise it!
+*/
+
+@media (max-width: 720px){
+    body{
+        font-size:1em;
+    }
+
+    .signoff{
+        font-size:1em;
+    }
+
+    #header{
+        font-size:4em;
+    }
+    .title{
+        font-size:2em;
+    }
+    nav>ul{
+        font-size:1.5em;
+    }
+}
+
+@media (max-width: 320px){
+    #header{
+        font-size:3.75em;
+    }
+    nav li{
+        display: inline;
+        margin: 0;
+    }
+    nav>ul{
+        font-size:1.25em;
+    }
+}
+
+@media (max-width: 240px){
+    nav li{
+        display: block;
+        margin-left: 0;
+    }
+
+    nav li:first-child{
+        margin-left: 0;
+    }
+}
+/*--- END MOBILE ---*/

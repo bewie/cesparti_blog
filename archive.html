@@ -1,0 +1,17 @@
+---
+layout: page
+title: Archive
+slug: archive
+---
+
+<h2>La liste des {{ site.posts.size }} billets.</h2>
+
+<ol class="archive">
+    {% for post in site.posts %}
+    <li>
+        <time datetime="{{ post.date | date_to_xmlschema }}" pubdate>{{ post.date | date_to_string }}</time>
+        &mdash;
+        <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+</ol>

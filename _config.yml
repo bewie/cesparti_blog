@@ -1,0 +1,40 @@
+pygments: true
+permalink: pretty
+port: 3000
+markdown: kramdown
+#markdown: redcarpet
+#markdown: rdiscount
+
+extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data", "smart"]
+
+
+paginate: 3
+
+exclude: ['Rakefile', 'README.markdown', 'TODO', 'LICENSE']
+
+photos: /photos
+
+
+gallery:
+  # path to the gallery
+  dir: photos
+  # title for gallery index
+  title: "Photos"
+  # title prefix for gallery page. title=title_prefix+gallery_name
+  title_prefix: "Photos: "
+  # field to control sorting of galleries for the index page
+  # (possible values are: title, date_time, best_image)
+  sort_field: "date_time"
+  # sizes for thumbnails
+  thumbnail_size:
+    x: 400
+    y: 400
+  # custom configuration for individual gallery
+  # best_image is image for the index page (defaults to last image)
+  #galleries:
+  #  chile_trip:
+  #    best_image: IMG_1068.JPG
+  #  japan_trip:
+  #    best_image: IMG_0690.JPG
+  #  best:
+  #    best_image: snaileo_gonzales.jpg

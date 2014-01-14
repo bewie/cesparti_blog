@@ -1,0 +1,8 @@
+*.swp
+*.log
+.DS_Store
+_site/
+_posts/
+_drafts/
+photos/
+
