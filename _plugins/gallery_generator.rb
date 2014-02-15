@@ -84,7 +84,7 @@ module Jekyll
           end
         end
       end
-      self.data["images"] = @images
+      self.data["images"] = @images.sort
       begin
         best_image = site.config["gallery"]["galleries"][self.data["gallery"]]["best_image"]
       rescue
