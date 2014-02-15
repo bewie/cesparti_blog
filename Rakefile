@@ -28,16 +28,26 @@ end
 desc 'Make a new post'
 task :post, :name do |t, args|
   if args.name then
-    template(args.name)
+    template(args.name, '_posts/')
   else
     puts "Name required"
   end
 end
 
-def template(name)
+desc 'Make a new draft'
+task :draft, :name do |t, args|
+  if args.name then
+    template(args.name, '_drafts/')
+  else
+    puts "Name required"
+  end
+end
+
+
+def template(name, path)
   t = Time.now
 
-  filename = "_posts/" + t.strftime("%Y-%m-%d-") + name.downcase.gsub( /[^a-zA-Z0-9_\.]/, '-') + '.markdown'
+  filename = path + t.strftime("%Y-%m-%d-") + name.downcase.gsub( /[^a-zA-Z0-9_\.]/, '-') + '.markdown'
   if File.exists? filename then
     puts "Post already exists: #{filename}"
     return
