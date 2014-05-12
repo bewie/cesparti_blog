@@ -23,13 +23,24 @@ layout: page
 		</script>		
 		<div class="container">
 			<!-- Top Navigation -->
-			<ul class="grid effect-1" id="grid">
+		<ul class="grid effect-1" id="grid">
 		{% for image in page.images %}
-
-		<li><a class="slide1" href="{{ image }}"><img src="thumbs/{{ image }}"></a></li>
-
+			<!-- use modulofilter: -->
+			{% capture modulo %}{{ forloop.index | mod: page.image_base.size }}{% endcapture %}
+			<!-- Increment by 0 to convert string into int... -->
+			{% assign my_variable = modulo | plus: 0 %}
+			<!-- 
+			Debug: 
+				index: {{ forloop.index }}
+				size: {{ page.image_base.size }} 
+				modulo: {{ modulo }}
+				var: {{ my_variable }}
+				result:  {{ page.image_base[my_variable] }}/{{ image[1] }}/thumbs/{{ image[0] }}
+				img: {{ image[0] }} | {{ image[1] }}
+			-->
+			<li><a class="slide1" href="{{ image[0] }}"><img src="{{ page.image_base[my_variable] }}/{{ image[1] }}/thumbs/{{ image[0] }}"></a></li>
 		{% endfor %}
-			</ul>
+		</ul>
 		</div>
 		<script src="/js/masonry.pkgd.min.js"></script>
 		<script src="/js/imagesloaded.js"></script>

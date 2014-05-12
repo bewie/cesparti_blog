@@ -16,6 +16,8 @@ photos: /photos
 
 
 gallery:
+  #If use other domain for images (default /)
+  #url: ['static1.domain.com', 'static2.domain.com']
   # path to the gallery
   dir: photos
   # title for gallery index
