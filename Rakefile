@@ -10,6 +10,11 @@ task :build do
   jekyll('build')
 end
 
+desc 'Build site with jekyll'
+task :bprod do
+  jekyll('build --config _config_prod.yml')
+end
+
 desc 'clean _site'
 task :clean do
   sh 'rm -rf _site'
@@ -18,6 +23,11 @@ end
 desc 'Start server with --auto'
 task :server do
   jekyll('serve -w')
+end
+
+desc 'Start server with prod configfile'
+task :sprod do
+  jekyll('serve -w --config _config_prod.yml')
 end
 
 desc 'Build and deploy'
@@ -53,7 +63,7 @@ def template(name, path)
     return
   end
   File.open(filename, "wb") do |f|
-    f.puts YAML.dump({'layout' => 'post', 'title' => name, 'time' => t.strftime("%Y-%m-%d %H:%M")})
+    f.puts YAML.dump({'layout' => 'post', 'title' => name, 'time' => t.strftime("%Y-%m-%d %H:%M"), 'category' => 'changeme'})
     f.puts "---"
   end
   puts "created #{filename}"
